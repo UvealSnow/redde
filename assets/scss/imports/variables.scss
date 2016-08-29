@@ -1,0 +1,41 @@
+/**
+*  Author: Kevin Avila (@UvealSnow),
+*  Created following guidelines from: 
+*  http://cssguidelin.es/#the-importance-of-a-styleguide,
+*  For: Nuva.Rocks Copyright 2016
+*
+*/
+
+/*---------------------------------------------------------------------------*\
+  # Variables
+\*----------------------------------------------------------------------------*/
+
+/**
+*  Base colors for the webpage
+*  Includes main texts and primary colors
+*/
+
+$main-text-color: #444444;
+$blue: #3a7bb4;
+$yellow: #eeb429;
+
+/**
+*  Border mixins to be included with "@include"
+*  Keep yourself DRY
+*/
+
+@mixin top-left-border-radius () {
+  border-top-left-radius: 100px;
+}
+
+@mixin top-right-border-radius () {
+	border-top-right-radius: 100px;
+}
+
+@mixin bottom-right-border-radius () {
+	border-bottom-right-radius: 100px;
+}
+
+
+
+

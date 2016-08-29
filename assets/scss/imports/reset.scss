@@ -1,0 +1,45 @@
+/**
+*  Author: Kevin Avila (@UvealSnow),
+*  Created following guidelines from: 
+*  http://cssguidelin.es/#the-importance-of-a-styleguide,
+*  For: Nuva.Rocks Copyright 2016
+*
+*/
+
+/*---------------------------------------------------------------------------*\
+  # Reset
+\*----------------------------------------------------------------------------*/
+
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font: inherit;
+	font-size: 100%;
+	font-style: normal;
+	font-weight: normal;
+	vertical-align: baseline;
+	text-decoration: none;
+}
+
+body {
+	color: $main-text-color;
+	font-family: 'Avenir LT Std';
+}
+
+ol,
+li {
+	list-style: none;
+}
+
+h1 {
+	font-size: 30px;
+}
+
+p {
+	font-size: 20px;
+}
+
+
+
+
