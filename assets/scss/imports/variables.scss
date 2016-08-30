@@ -24,16 +24,16 @@ $yellow: #eeb429;
 *  Keep yourself DRY
 */
 
-@mixin top-left-border-radius () {
-  border-top-left-radius: 100px;
+@mixin top-left-border-radius ($rad) {
+  border-top-left-radius: $rad;
 }
 
-@mixin top-right-border-radius () {
-	border-top-right-radius: 100px;
+@mixin top-right-border-radius ($rad) {
+	border-top-right-radius: $rad;
 }
 
-@mixin bottom-right-border-radius () {
-	border-bottom-right-radius: 100px;
+@mixin bottom-right-border-radius ($rad) {
+	border-bottom-right-radius: $rad;
 }
 
 

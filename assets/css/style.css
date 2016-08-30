@@ -4,8 +4,8 @@
 *  Enterprise: Nuva.Rocks,
 *  Created following guidelines from: 
 *  http://cssguidelin.es/#the-importance-of-a-styleguide and BEM
-*  naming conventions, build mobile first for 320::568px.
-*  For: ReddeFinanciera Copyright: 2016.
+*  naming conventions, build mobile first (320::568px).
+*  For: ReddeFinanciera, Copyright: Nuva.Rocks 2016.
 *
 */
 /**
@@ -13,17 +13,25 @@
 *  Table of contents
 *  
 *  Imports
-*  variables.scss - Colors and other values are stored here
-*	 reset.scss - Basic css reset for every webpage
-*  fonts.scss - Add the fonts for this webpage
+*    variables.scss - Colors and other values are stored here
+*    reset.scss - Basic css reset for every webpage
+*    fonts.scss - Add the fonts for this webpage
 *
 *  Base
+*    Text and headers - Styles and modifications required for this style
+*    Form styling - Styles for the form inputs and buttons
+*    Google Maps styling - Just height, width and margins
 *
 *  Objects
-*
-*  Components
+*    Navbar - Styles for looks and transitions
+*    Slider - Just the bases of some slider
+*    Webpage sections - The core elements of the webpage styles and 
+*      sub-elements are contained in this section
+*    Footer - Styles for footer
 *
 *  Media queries
+*    media-queries.scss - All media queries for all resolutions
+*      for detailed information look at the TOC in that file
 *
 */
 /*---------------------------------------------------------------------------*\
@@ -115,6 +123,17 @@ p {
 .title {
   color: #444444; }
 
+.body {
+  color: #444444; }
+
+.title--right,
+.body--right {
+  text-align: right; }
+
+.title--constrained {
+  max-width: 300px;
+  margin: 0 auto; }
+
 .title--white,
 .body--white {
   color: white; }
@@ -137,6 +156,75 @@ p {
 .body--bold {
   font-weight: bold; }
 
+.title--padded {
+  height: 120px;
+  font-size: 35px;
+  margin: 12px 0; }
+
+.body--padded {
+  font-size: 15px;
+  margin: 10px 0; }
+
+.xs {
+  margin-top: 15px;
+  font-size: 12px;
+  display: block; }
+
+/**
+*  Form styling
+*
+*/
+input {
+  width: calc(100% - 20px);
+  max-width: 320px;
+  border: 2px solid #eeb429;
+  padding: 10px 5px;
+  margin: 10px auto; }
+
+.submit {
+  width: 100%;
+  max-width: 320px;
+  height: 50px;
+  border-bottom-right-radius: 30px;
+  background-color: #eeb429;
+  text-align: left;
+  padding: 0 15px;
+  font-size: 25px;
+  font-weight: bold;
+  margin: 25px 0; }
+
+.checkbox {
+  margin: 25px 0;
+  max-width: 320px; }
+  .checkbox p {
+    margin: 1px 0;
+    padding: 0 15px;
+    height: 25px;
+    font-size: 20px !important; }
+  .checkbox .xl {
+    font-weight: normal;
+    font-size: 28px !important; }
+
+.checkbox--hidden {
+  display: none;
+  opacity: 0; }
+
+.checkbox.active p {
+  color: #eeb429;
+  -webkit-transition: color .5s;
+          transition: color .5s; }
+.checkbox.active span {
+  color: white; }
+
+/**
+*  Google Maps styling
+*
+*/
+.map {
+  margin: 0 auto;
+  width: calc(100% - 15px);
+  height: 250px; }
+
 /*---------------------------------------------------------------------------*\
   # Objects
 \*----------------------------------------------------------------------------*/
@@ -147,7 +235,11 @@ p {
 .navbar {
   width: 100%;
   height: 67.2px;
-  background-color: #3a7bb4; }
+  background-color: #3a7bb4;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99; }
 
 .navbar__logo {
   width: 120px;
@@ -166,6 +258,29 @@ p {
     height: 30px;
     margin: 5px; }
 
+.navbar__links {
+  display: none;
+  opacity: 0;
+  width: 150px;
+  position: absolute;
+  right: 0;
+  top: 67.2px;
+  padding: 15px;
+  background-color: #3a7bb4; }
+  .navbar__links a {
+    color: white;
+    display: block;
+    text-align: right;
+    border-bottom: 2px solid white;
+    padding: 8px;
+    font-size: 13px; }
+  .navbar__links a:last-of-type {
+    border-bottom: 0; }
+
+.navbar__links.active {
+  display: inline;
+  opacity: 1; }
+
 /**
 *  Slider
 *
@@ -173,7 +288,7 @@ p {
 .slider {
   width: calc(100% - 18.75px);
   height: 220px;
-  margin: 25px auto;
+  margin: 85px auto 25px;
   background-color: transparent;
   position: relative; }
 
@@ -217,6 +332,10 @@ p {
   display: block;
   opacity: 1; }
 
+/**
+*  Webpage section
+*
+*/
 .section {
   margin: 45px auto;
   width: calc(100% - 18.5px);
@@ -227,21 +346,128 @@ p {
   width: calc(100% - 18.5px); }
   .info img {
     border-top-left-radius: 100px;
-    width: 100%; }
+    width: 100%;
+    max-height: 250px; }
 
 .learn-more {
-  border-bottom-right-radius: 100px;
+  border-bottom-right-radius: 30px;
   background-color: #3a7bb4;
-  height: 60px; }
+  height: 35px;
+  max-width: 320px; }
+  .learn-more img {
+    height: 20px !important;
+    width: 20px !important;
+    margin: 10px; }
+  .learn-more img,
+  .learn-more p {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 24px; }
 
+.icons {
+  width: calc(100% - 18.5px);
+  margin: 25px auto; }
+
+.icons__column {
+  height: 150px;
+  width: 90%;
+  margin: 0 auto;
+  text-align: center; }
+  .icons__column p {
+    max-width: 200px;
+    margin: 15px auto;
+    display: block; }
+  .icons__column img {
+    width: 55px;
+    height: 55px; }
+
+.featured {
+  width: calc(100% - 18.75px);
+  margin: 25px auto; }
+  .featured img {
+    width: 100%; }
+
+.featured__image, .featured__image--right, .featured__image--left, .featured__image--separator {
+  width: 100%;
+  min-height: 100px;
+  overflow: hidden; }
+  .featured__image img, .featured__image--right img, .featured__image--left img, .featured__image--separator img {
+    width: 100%; }
+
+.featured__image--right {
+  border-top-right-radius: 100px; }
+
+.featured__image--left {
+  border-top-left-radius: 100px; }
+
+.featured__image--separator {
+  border-bottom-right-radius: 80px;
+  height: 100px;
+  margin: 0 0 40px 0; }
+
+.row {
+  width: calc(100% - 18.75px);
+  margin: 0 auto; }
+
+.column__2 {
+  width: 100%;
+  margin: 25px auto; }
+
+/**
+*  Footer
+*
+*/
 .footer {
   width: 100%;
-  height: 130px;
+  height: 65px;
   background-color: #eeb429; }
+  .footer p {
+    height: 20px;
+    text-align: right;
+    margin: 0 15px 5px 15px;
+    padding-top: 40px; }
+  .footer a {
+    color: white;
+    text-decoration: underline; }
 
-/*---------------------------------------------------------------------------*\
-  # Components
-\*----------------------------------------------------------------------------*/
 /*---------------------------------------------------------------------------*\
   # Media queries
 \*----------------------------------------------------------------------------*/
+@media screen and (min-width: 767px) {
+  .slider__image {
+    width: calc(100% - 150px);
+    margin: 0;
+    max-height: 200px; }
+
+  .info {
+    width: calc(30% - 15px);
+    margin: 0 7.5px;
+    display: inline-block; }
+    .info img {
+      border-top-left-radius: 60px; }
+    .info h1 {
+      font-size: 28px; }
+
+  .learn-more p {
+    font-size: 25px; }
+
+  .title--constrained {
+    margin: 0 35px; }
+
+  .icons__column {
+    display: inline-block;
+    width: 240px;
+    margin: auto 0; }
+    .icons__column img {
+      float: left;
+      margin: 15px;
+      display: inline-block;
+      vertical-align: top; }
+    .icons__column p {
+      display: inline-block;
+      vertical-align: top;
+      width: 150px;
+      text-align: left; }
+
+  .featured__image, .featured__image--right, .featured__image--left, .featured__image--separator {
+    height: 270px; } }
