@@ -129,7 +129,7 @@ input {
 	width: calc(100% - 20px);
 	max-width: 320px;
 	border: 2px solid $yellow;
-	padding: 10px 5px;
+	padding: 10px 5px; 
 	margin: 10px auto;
 }
 
@@ -369,6 +369,17 @@ input {
 		}
 	}
 
+		.learn-more--left {
+			@extend .learn-more;
+			@include bottom-left-border-radius(30px); 
+			@include bottom-right-border-radius(0px);
+			float: right;
+
+			p {
+				width: 238px;
+			}
+		}
+
 	.icons {
 		width: calc(100% - 18.5px);
 		margin: 25px auto;
@@ -428,6 +439,13 @@ input {
 			margin: 0 0 40px 0;
 		}
 
+		.stretch {
+		    width: 100%;
+		    display: inline-block;
+		    font-size: 0;
+		    line-height: 0
+		}
+
 	.row {
 		width: calc(100% - 18.75px);
 		margin: 0 auto;
@@ -470,65 +488,10 @@ input {
   # Media queries
 \*----------------------------------------------------------------------------*/
 
-//@import 'imports/media-queries';
+@import 'imports/media-queries'; 
 
-@media screen and (min-width: 767px) {
 
-	.slider__image {
-		width: calc(100% - 150px);
-		margin: 0;
-		max-height: 200px;
-	}
 
-	.info {
-		width: calc(30% - 15px);
-		margin: 0 7.5px;
-		display: inline-block;
-
-		img {
-			@include top-left-border-radius(60px);
-		}
-
-		h1 {
-			font-size: 28px;
-		}
-	}
-
-	.learn-more {
-
-		p {
-			font-size: 25px;
-		}
-	}
-
-	.title--constrained {
-		margin: 0 35px;
-	}
-
-	.icons__column {
-		display: inline-block;
-		width: 240px;
-		margin: auto 0;
-
-		img {
-			float: left;
-			margin: 15px;
-			display: inline-block;
-			vertical-align: top
-		}
-
-		p {
-			display: inline-block;
-			vertical-align: top;
-			width: 150px;
-			text-align: left;
-		}
-	}
-
-	.featured__image {
-		height: 270px;
-	}
-}
 
 
 

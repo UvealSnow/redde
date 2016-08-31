@@ -36,6 +36,10 @@ $yellow: #eeb429;
 	border-bottom-right-radius: $rad;
 }
 
+@mixin bottom-left-border-radius ($rad) {
+	border-bottom-left-radius: $rad;
+}
+
 
 
 
